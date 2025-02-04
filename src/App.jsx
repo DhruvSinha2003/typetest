@@ -11,7 +11,6 @@ const App = () => {
   const [accuracy, setAccuracy] = useState(100);
   const [isComplete, setIsComplete] = useState(false);
 
-  // Get random text based on difficulty
   const getRandomText = (diff) => {
     const filteredTexts = texts.texts.filter(
       (text) => text.difficulty === diff
@@ -59,6 +58,7 @@ const App = () => {
 
   const resetTest = () => {
     setInput("");
+    setTargetText(getRandomText(difficulty));
     setStartTime(null);
     setWpm(0);
     setAccuracy(100);
