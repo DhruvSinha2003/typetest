@@ -1,0 +1,49 @@
+{
+  "texts": [
+    {
+      "id": 1,
+      "content": "The cat sat on the mat.",
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "content": "The quick brown fox jumps over the lazy dog.",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "content": "She sells seashells by the seashore.",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "content": "Pack my box with five dozen liquor jugs. How quickly daft jumping zebras vex.",
+      "difficulty": "medium"
+    },
+    {
+      "id": 5,
+      "content": "The five boxing wizards jump quickly. The job requires extra pluck and zeal from every young wage earner.",
+      "difficulty": "medium"
+    },
+    {
+      "id": 6,
+      "content": "Sphinx of black quartz, judge my vow! Quick wafting zephyrs vex bold Jim.",
+      "difficulty": "medium"
+    },
+    {
+      "id": 7,
+      "content": "The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs. How quickly daft jumping zebras vex. The five boxing wizards jump quickly.",
+      "difficulty": "hard"
+    },
+    {
+      "id": 8,
+      "content": "Waltz, nymph, for quick jigs vex Bud. Sphinx of black quartz, judge my vow! The quick onyx goblin jumps over the lazy dwarf. Five quacking zephyrs jolt my wax bed.",
+      "difficulty": "hard"
+    },
+    {
+      "id": 9,
+      "content": "How vexingly quick daft zebras jump! The jay, pig, fox, zebra, and my wolves quack! Quick zephyrs blow, vexing daft Jim. Two driven jocks help fax my big quiz.",
+      "difficulty": "hard"
+    }
+  ]
+}

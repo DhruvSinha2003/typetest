@@ -1,18 +1,30 @@
 import { Check, Clock, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
+import texts from "./texts.json";
 
 const App = () => {
   const [input, setInput] = useState("");
-  // const [targetText, setTargetText] = useState(
-  //   "Type this text to test your typing speed and accuracy."
-  // );
-
-  const targetText = "Type this text to test your typing speed and accuracy.";
-
+  const [difficulty, setDifficulty] = useState("easy");
+  const [targetText, setTargetText] = useState("");
   const [startTime, setStartTime] = useState(null);
   const [wpm, setWpm] = useState(0);
   const [accuracy, setAccuracy] = useState(100);
   const [isComplete, setIsComplete] = useState(false);
+
+  // Get random text based on difficulty
+  const getRandomText = (diff) => {
+    const filteredTexts = texts.texts.filter(
+      (text) => text.difficulty === diff
+    );
+    const randomIndex = Math.floor(Math.random() * filteredTexts.length);
+    return filteredTexts[randomIndex].content;
+  };
+
+  // Initialize text when difficulty changes
+  useEffect(() => {
+    setTargetText(getRandomText(difficulty));
+    resetTest();
+  }, [difficulty]);
 
   useEffect(() => {
     if (input.length === 1) {
@@ -58,11 +70,26 @@ const App = () => {
     return char === input[index] ? "text-green-500" : "text-red-500";
   };
 
+  const handleDifficultyChange = (e) => {
+    setDifficulty(e.target.value);
+  };
+
   return (
     <main className="bg-gray-900 min-h-screen flex items-center justify-center p-4">
       <div className="container max-w-2xl mx-auto">
         <div className="bg-gray-800 rounded-lg shadow-xl p-8">
-          <h1 className="text-4xl font-bold text-white mb-6">Typing Test</h1>
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-4xl font-bold text-white">Typing Test</h1>
+            <select
+              value={difficulty}
+              onChange={handleDifficultyChange}
+              className="bg-gray-700 text-white px-4 py-2 rounded-lg border-2 border-gray-600 focus:border-blue-500 focus:outline-none"
+            >
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
 
           <div className="flex justify-center space-x-8 mb-8">
             <div className="text-center">
